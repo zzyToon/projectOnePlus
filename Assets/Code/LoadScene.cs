@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class testScript : MonoBehaviour {
+public class LoadScene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,4 +14,9 @@ public class testScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void onLoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }
