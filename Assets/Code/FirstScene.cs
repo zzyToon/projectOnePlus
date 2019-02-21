@@ -14,10 +14,11 @@ public class FirstScene : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0) && panel.activeSelf == false) {
             panel.SetActive(true);
+            text.SetActive(false);
         }
-        else if (Input.GetMouseButtonDown(0))
+        /*else if (Input.GetMouseButtonDown(0))
         {
             panel.SetActive(false);
-        }
+        }*/
 	}
 }
