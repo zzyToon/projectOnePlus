@@ -24,6 +24,7 @@ public class ObjectTrans : MonoBehaviour {
 
     public void ChoosingObj(Transform obj)
     {
+
         nextObj = obj;
         DoOutLine();
     }
@@ -42,6 +43,8 @@ public class ObjectTrans : MonoBehaviour {
         {
             Debug.Log("NO CALCLE DRAW " + nextObj.name);
             nextObj.GetComponent<cakeslice.Outline>().color = 1;
+            Transform selectedMenu = nextObj.GetChild(0);
+            selectedMenu.gameObject.SetActive(true);
             isChossingObj = true;
             curObj = nextObj;
         }
