@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Login : MonoBehaviour {
+    public GameObject menu;
+    public GameObject login;
 	// Use this for initialization
 	void Start () {
 		
@@ -31,7 +33,11 @@ public class Login : MonoBehaviour {
         }
         else
         {
-            SceneManager.LoadScene("InGame");
+            //SceneManager.LoadScene("InGame");
+            login.SetActive(false);
+            menu.SetActive(true);
+            //MemoryCString.showAsToast("登录成功");
+            //此处为toast显示信息，但在unity测试环境中无法进行，需要在android系统中才可以调用。
         }
     }
 }
