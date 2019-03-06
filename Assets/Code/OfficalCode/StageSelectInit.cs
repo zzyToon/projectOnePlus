@@ -11,6 +11,7 @@ public class StageSelectInit : MonoBehaviour {
     //获取content和scrollbar组件
     public GameObject content;
     public GameObject scrollBar;
+    public GameObject itemCell;
     public void Awake()
     {
         //SetContentSize();
@@ -38,7 +39,13 @@ public class StageSelectInit : MonoBehaviour {
          * 6.向上取整函数：Mathf.Ceil(num);
         */
 
+        //获取cell数量，此处暂时用固定数值代替
         //此处应为初始化cell函数
+        for (int i = 0; i < getCellNum(); i++)
+        {
+            GameObject cell = Instantiate(itemCell);
+            cell.transform.parent = content.transform;
+        }
         //设置content宽度
         screenWidth = Screen.width;
         content.GetComponent<RectTransform>().sizeDelta = new Vector2(screenWidth - scrollBar.GetComponent<RectTransform>().rect.width, screenWidth);
@@ -59,6 +66,12 @@ public class StageSelectInit : MonoBehaviour {
        
         
         Debug.Log(content.GetComponent<RectTransform>().childCount); 
+    }
+
+    public int getCellNum()
+    {
+        int cellNum = 21;
+        return cellNum;
     }
     /*
     public void SetContentSize()
